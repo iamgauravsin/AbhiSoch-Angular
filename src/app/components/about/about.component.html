@@ -1,0 +1,239 @@
+<!-- Page Header -->
+
+<div class="container-fluid p-0">
+  <div class="page-header pb-5">
+
+```
+<div class="container text-center py-5">
+
+  <h1 class="display-4 text-uppercase mb-3 animate__animated animate__slideInDown">
+    About
+  </h1>
+
+  <nav aria-label="breadcrumb" class="animate__animated animate__slideInDown animate__delay-1s">
+    <ol class="breadcrumb justify-content-center text-uppercase mb-0">
+      <li class="breadcrumb-item">
+        <a class="text-white" routerLink="/">Home</a>
+      </li>
+
+      <li class="breadcrumb-item">
+        <a class="text-white">Pages</a>
+      </li>
+
+      <li class="breadcrumb-item text-primary active" aria-current="page">
+        About
+      </li>
+    </ol>
+  </nav>
+
+</div>
+```
+
+  </div>
+</div>
+
+<!-- About Content -->
+
+<div class="container-fluid">
+  <div class="container">
+
+```
+<div class="row g-5 align-items-center">
+
+  <div class="col-lg-7 py-5">
+
+    <div class="title wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+
+      <div class="title-left">
+        <h5>History</h5>
+        <h1>About Our Agency</h1>
+      </div>
+
+    </div>
+
+    <p class="mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+      Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
+      Aliqu diam amet diam et eos.
+    </p>
+
+    <ul class="list-group list-group-flush mb-5 wow animate__animated animate__fadeInUp"
+        data-wow-delay="0.3s">
+
+      <li class="list-group-item bg-dark text-body border-secondary ps-0">
+        <i class="fa fa-check-circle text-primary me-1"></i>
+        Lorem ipsum dolor sit amet consectetur elit.
+      </li>
+
+      <li class="list-group-item bg-dark text-body border-secondary ps-0">
+        <i class="fa fa-check-circle text-primary me-1"></i>
+        Donec vehicula, sem ut tempus tempus.
+      </li>
+
+      <li class="list-group-item bg-dark text-body border-secondary ps-0">
+        <i class="fa fa-check-circle text-primary me-1"></i>
+        Morbi mi dapibus, feugiat nisi non mollis justo.
+      </li>
+
+    </ul>
+
+
+    <div class="row wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+
+      <div class="col-6">
+        <a class="btn btn-outline-primary border-2 py-3 w-100">
+          Become A Model
+        </a>
+      </div>
+
+      <div class="col-6">
+        <a class="btn btn-primary py-3 w-100">
+          Schedule Casting
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="col-lg-5 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+
+    <img class="img-fluid" src="assets/img/about.png" alt="About">
+
+  </div>
+
+</div>
+```
+
+  </div>
+</div>
+
+<!-- Casting Banner -->
+
+<div class="container-fluid py-5 bg-secondary">
+
+  <div class="container py-5">
+
+```
+<div class="row g-0 justify-content-center">
+
+  <div class="col-lg-7 text-center">
+
+    <div class="title mx-5 px-5 wow animate__animated animate__fadeInUp"
+         data-wow-delay="0.1s">
+
+      <div class="title-center">
+        <h5>Casting</h5>
+        <h1>Want to be a Model?</h1>
+      </div>
+
+    </div>
+
+
+    <p class="fs-5 mb-5 wow animate__animated animate__fadeInUp"
+       data-wow-delay="0.2s">
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    </p>
+
+
+    <div class="position-relative wow animate__animated animate__fadeInUp"
+         data-wow-delay="0.3s">
+
+      <input class="form-control border-0 bg-dark rounded-pill w-100 py-4 ps-4 pe-5"
+             type="email"
+             placeholder="Your email"
+             [(ngModel)]="signupEmail">
+
+      <button type="button"
+              (click)="onSignup()"
+              class="btn btn-primary py-3 px-4 position-absolute top-0 end-0 me-2"
+              style="margin-top:7px">
+
+        SignUp
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</div>
+
+<!-- Models -->
+
+<div class="container-fluid py-5">
+
+  <div class="container py-5">
+
+```
+<div class="text-center">
+
+  <div class="title wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+
+    <div class="title-center">
+      <h5>Models</h5>
+      <h1>Meet Our Models</h1>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="row g-4">
+
+  <div *ngFor="let model of models; let i = index"
+       class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp"
+       [attr.data-wow-delay]="(0.1 + (i % 4) * 0.2) + 's'">
+
+    <div class="team-item">
+
+      <div class="team-body">
+
+        <div class="team-before">
+          <span>Age</span>
+          <span>Height</span>
+          <span>Weight</span>
+          <span>Bust</span>
+          <span>Waist</span>
+          <span>Hips</span>
+        </div>
+
+        <img class="img-fluid"
+             [src]="model.image"
+             [alt]="model.name">
+
+        <div class="team-after">
+
+          <span>{{ model.age }}</span>
+          <span>{{ model.height }}</span>
+          <span>{{ model.weight }}</span>
+          <span>{{ model.bust }}</span>
+          <span>{{ model.waist }}</span>
+          <span>{{ model.hips }}</span>
+
+        </div>
+
+      </div>
+
+      <a class="team-name">
+        <h5 class="text-uppercase mb-0">{{ model.name }}</h5>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</div>

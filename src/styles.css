@@ -1,0 +1,50 @@
+/* Import custom styles */
+@import 'assets/css/style.css';
+
+/********** Template CSS **********/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #ced4da;
+  font-family: 'Work Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #ffffff;
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 45px;
+  bottom: 45px;
+  z-index: 99;
+}
+
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-out, visibility 0s linear .5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  transition: opacity .5s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* WOW.js - elements hidden before animation */
+.wow {
+  visibility: hidden;
+}
+
+/* Animated class applied by WOW.js */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}

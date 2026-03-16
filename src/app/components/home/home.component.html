@@ -1,0 +1,198 @@
+<!-- Header / Carousel -->
+
+<div class="container-fluid p-0">
+  <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img class="w-100" src="assets/img/carousel-1.jpg" alt="Carousel 1">
+
+        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+
+          <div class="title mx-5 px-5 animate__animated animate__slideInDown">
+            <div class="title-center">
+              <h5>Welcome</h5>
+              <h1 class="display-1">Modeling Agency</h1>
+            </div>
+          </div>
+
+          <p class="fs-5 mb-5 animate__animated animate__slideInDown" data-wow-delay="0.5s">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+            Sed erat lectus, venenatis sit amet egestas eget, aliquet a nisl.
+          </p>
+
+          <a href="#about" class="btn btn-outline-primary border-2 py-3 px-5 animate__animated animate__slideInDown">
+            Explore More
+          </a>
+
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+        <img class="w-100" src="assets/img/carousel-2.jpg" alt="Carousel 2">
+
+        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+
+          <div class="title mx-5 px-5 animate__animated animate__slideInDown">
+            <div class="title-center">
+              <h5>Welcome</h5>
+              <h1 class="display-1">Modeling Agency</h1>
+            </div>
+          </div>
+
+          <p class="fs-5 mb-5 animate__animated animate__slideInDown" data-wow-delay="0.5s">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+            Sed erat lectus, venenatis sit amet egestas eget, aliquet a nisl.
+          </p>
+
+          <a href="#about" class="btn btn-outline-primary border-2 py-3 px-5 animate__animated animate__slideInDown">
+            Explore More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</div>
+
+
+<!-- About Section -->
+
+<div id="about" class="container-fluid bg-secondary">
+
+  <div class="container">
+
+    <div class="row g-5 align-items-center">
+
+      <div class="col-lg-7 py-5">
+
+        <div class="title wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+          <div class="title-left">
+            <h5>History</h5>
+            <h1>About Our Agency</h1>
+          </div>
+        </div>
+
+        <p class="mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+          Tempor erat elitr rebum at clita...
+        </p>
+
+        <ul class="list-group list-group-flush mb-5 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+
+          <li class="list-group-item bg-dark text-body border-secondary ps-0">
+            <i class="fa fa-check-circle text-primary me-1"></i>
+            Lorem ipsum dolor sit amet consectetur elit.
+          </li>
+
+          <li class="list-group-item bg-dark text-body border-secondary ps-0">
+            <i class="fa fa-check-circle text-primary me-1"></i>
+            Donec vehicula, sem ut tempus tempus.
+          </li>
+
+        </ul>
+
+        <div class="row wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+
+          <div class="col-6">
+            <a class="btn btn-outline-primary border-2 py-3 w-100">
+              Become A Model
+            </a>
+          </div>
+
+          <div class="col-6">
+            <a class="btn btn-primary py-3 w-100">
+              Schedule Casting
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-5 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+        <img class="img-fluid" src="assets/img/about.png">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Services Section -->
+
+<div class="container-fluid py-5">
+
+  <div class="container py-5">
+
+    <div class="text-center">
+
+      <div class="title wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+        <div class="title-center">
+          <h5>Services</h5>
+          <h1>How We Help You</h1>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div *ngFor="let service of services" class="service-item" [class.service-item-left]="service.direction === 'left'"
+      [class.service-item-right]="service.direction === 'right'">
+
+      <div class="row g-0 align-items-center">
+
+        <div class="col-md-5" [class.order-md-1]="service.direction === 'right'">
+
+          <div class="service-img p-5" [attr.data-wow-delay]="'0.2s'" [ngClass]="service.direction === 'left'
+               ? 'wow animate__animated animate__fadeInRight'
+               : 'wow animate__animated animate__fadeInLeft'">
+
+            <img class="img-fluid rounded-circle" [src]="service.image">
+
+          </div>
+
+        </div>
+
+
+        <div class="col-md-7">
+
+          <div class="service-text px-5 py-md-5" [ngClass]="service.direction === 'left'
+               ? 'wow animate__animated animate__fadeInRight'
+               : 'wow animate__animated animate__fadeInLeft'" [attr.data-wow-delay]="'0.5s'">
+
+            <h3 class="text-uppercase">{{ service.title }}</h3>
+
+            <p class="mb-4">
+              {{ service.description }}
+            </p>
+
+            <a class="btn btn-outline-primary border-2 px-4">
+              Read More
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
